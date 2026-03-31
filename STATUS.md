@@ -45,4 +45,4 @@
 - Required env vars: `HCAPTCHA_SITE_KEY`, `HCAPTCHA_SECRET_KEY`, `RAILS_MASTER_KEY`, `ADMIN_PASSWORD`
 
 ## Heroku URL
-> _Set after deployment: `heroku create aiwrench`_
+https://aiwrench-ddfe4af0b703.herokuapp.com/

@@ -1,0 +1,96 @@
+<div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-8">
+  <div>
+    <h1 class="text-2xl font-bold">Leads</h1>
+    <p class="text-gray-400 text-sm mt-1"><%= @leads.count %> total</p>
+  </div>
+
+  <!-- Status Filters -->
+  <div class="flex items-center gap-2 flex-wrap">
+    <%= link_to "All", admin_leads_path, class: "px-3 py-1.5 text-sm font-semibold rounded transition #{params[:status].blank? ? 'bg-[#2563eb] text-white' : 'bg-[#111118] text-gray-400 hover:text-white border border-gray-700'}" %>
+    <% Lead::STATUSES.each do |status| %>
+      <%= link_to status.capitalize, admin_leads_path(status: status), class: "px-3 py-1.5 text-sm font-semibold rounded transition #{params[:status] == status ? 'bg-[#2563eb] text-white' : 'bg-[#111118] text-gray-400 hover:text-white border border-gray-700'}" %>
+    <% end %>
+  </div>
+</div>
+
+<!-- Bulk Actions -->
+<%= form_with url: bulk_destroy_admin_leads_path, method: :delete, id: "bulk-form" do %>
+  <div class="mb-4 flex items-center gap-4">
+    <label class="flex items-center gap-2 text-sm text-gray-400 cursor-pointer">
+      <input type="checkbox" id="select-all" class="rounded bg-[#0a0a0f] border-gray-700 text-[#2563eb] focus:ring-[#2563eb]"
+             onclick="document.querySelectorAll('.lead-checkbox').forEach(c => c.checked = this.checked)">
+      Select All
+    </label>
+    <button type="submit" onclick="return confirm('Delete selected leads?')"
+            class="px-3 py-1.5 text-sm font-semibold bg-red-900/30 text-red-400 border border-red-500/30 rounded hover:bg-red-900/50 transition">
+      Delete Selected
+    </button>
+  </div>
+
+  <!-- Leads Table -->
+  <div class="bg-[#111118] border border-gray-800/50 rounded overflow-hidden">
+    <div class="overflow-x-auto">
+      <table class="w-full text-sm">
+        <thead class="bg-[#0a0a0f] border-b border-gray-800/50">
+          <tr>
+            <th class="px-4 py-3 text-left w-8"></th>
+            <th class="px-4 py-3 text-left font-semibold text-gray-400">Name</th>
+            <th class="px-4 py-3 text-left font-semibold text-gray-400 hidden md:table-cell">Company</th>
+            <th class="px-4 py-3 text-left font-semibold text-gray-400">Email</th>
+            <th class="px-4 py-3 text-left font-semibold text-gray-400 hidden lg:table-cell">Phone</th>
+            <th class="px-4 py-3 text-left font-semibold text-gray-400 hidden lg:table-cell">Industry</th>
+            <th class="px-4 py-3 text-left font-semibold text-gray-400 hidden md:table-cell">Service</th>
+            <th class="px-4 py-3 text-left font-semibold text-gray-400">Status</th>
+            <th class="px-4 py-3 text-left font-semibold text-gray-400 hidden lg:table-cell">Date</th>
+            <th class="px-4 py-3 text-left font-semibold text-gray-400 w-20">Actions</th>
+          </tr>
+        </thead>
+        <tbody class="divide-y divide-gray-800/30">
+          <% @leads.each do |lead| %>
+            <tr class="hover:bg-[#0a0a0f]/50 transition">
+              <td class="px-4 py-3">
+                <input type="checkbox" name="lead_ids[]" value="<%= lead.id %>" class="lead-checkbox rounded bg-[#0a0a0f] border-gray-700 text-[#2563eb] focus:ring-[#2563eb]">
+              </td>
+              <td class="px-4 py-3 font-medium text-white"><%= lead.name %></td>
+              <td class="px-4 py-3 text-gray-400 hidden md:table-cell"><%= lead.company %></td>
+              <td class="px-4 py-3 text-gray-300"><%= lead.email %></td>
+              <td class="px-4 py-3 text-gray-400 hidden lg:table-cell"><%= lead.phone %></td>
+              <td class="px-4 py-3 text-gray-400 hidden lg:table-cell"><%= lead.industry %></td>
+              <td class="px-4 py-3 text-gray-400 hidden md:table-cell"><%= lead.service_interest %></td>
+              <td class="px-4 py-3">
+                <% status_colors = { "new" => "bg-[#2563eb]/20 text-[#2563eb]", "contacted" => "bg-yellow-500/20 text-[#eab308]", "qualified" => "bg-green-500/20 text-green-400", "closed" => "bg-gray-500/20 text-gray-400" } %>
+                <%= form_with model: lead, url: admin_lead_path(lead), method: :patch, class: "inline" do |f| %>
+                  <%= f.hidden_field :status %>
+                  <select onchange="this.form.querySelector('input[name=\"lead[status]\"]').value = this.value; this.form.requestSubmit();"
+                          class="px-2 py-1 text-xs font-bold rounded-sm border-0 cursor-pointer appearance-none <%= status_colors[lead.status] %> bg-transparent focus:outline-none focus:ring-1 focus:ring-[#2563eb]">
+                    <% Lead::STATUSES.each do |s| %>
+                      <option value="<%= s %>" <%= 'selected' if lead.status == s %> class="bg-[#111118] text-white"><%= s.capitalize %></option>
+                    <% end %>
+                  </select>
+                <% end %>
+              </td>
+              <td class="px-4 py-3 text-gray-500 text-xs hidden lg:table-cell"><%= lead.created_at.strftime("%b %d, %Y") %></td>
+              <td class="px-4 py-3">
+                <%= button_to admin_lead_path(lead), method: :delete, class: "text-red-400/50 hover:text-red-400 transition text-xs", data: { turbo_confirm: "Delete this lead?" } do %>
+                  Delete
+                <% end %>
+              </td>
+            </tr>
+            <% if lead.message.present? %>
+              <tr class="bg-[#0a0a0f]/30">
+                <td></td>
+                <td colspan="9" class="px-4 py-2 text-xs text-gray-500 italic">"<%= truncate(lead.message, length: 200) %>"</td>
+              </tr>
+            <% end %>
+          <% end %>
+
+          <% if @leads.empty? %>
+            <tr>
+              <td colspan="10" class="px-4 py-12 text-center text-gray-500">No leads found.</td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+<% end %>

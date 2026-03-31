@@ -1,0 +1,283 @@
+<!-- Navigation -->
+<nav class="fixed top-0 left-0 right-0 z-50 bg-[#0a0a0f]/90 backdrop-blur-md border-b border-gray-800/50">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-16">
+      <div class="flex items-center gap-2">
+        <span class="text-2xl">🔩</span>
+        <span class="text-xl font-extrabold tracking-tight">
+          ai<span class="text-[#2563eb]">Wrench</span>
+        </span>
+      </div>
+      <div class="hidden md:flex items-center gap-8">
+        <a href="#services" class="text-sm text-gray-400 hover:text-white transition">Services</a>
+        <a href="#how-it-works" class="text-sm text-gray-400 hover:text-white transition">How It Works</a>
+        <a href="#contact" class="text-sm text-gray-400 hover:text-white transition">Contact</a>
+        <a href="#contact" class="px-4 py-2 bg-[#2563eb] text-white text-sm font-semibold rounded hover:bg-[#1d4ed8] transition shadow-lg shadow-[#2563eb]/25">
+          Get Started
+        </a>
+      </div>
+      <!-- Mobile menu button -->
+      <button id="mobile-menu-btn" class="md:hidden text-gray-400 hover:text-white" onclick="document.getElementById('mobile-menu').classList.toggle('hidden')">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+        </svg>
+      </button>
+    </div>
+    <!-- Mobile menu -->
+    <div id="mobile-menu" class="hidden md:hidden pb-4">
+      <a href="#services" class="block py-2 text-gray-400 hover:text-white transition">Services</a>
+      <a href="#how-it-works" class="block py-2 text-gray-400 hover:text-white transition">How It Works</a>
+      <a href="#contact" class="block py-2 text-gray-400 hover:text-white transition">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<!-- Hero Section -->
+<section class="relative min-h-screen flex items-center justify-center overflow-hidden">
+  <!-- Circuit grid background -->
+  <div class="absolute inset-0 opacity-[0.03]" style="background-image: linear-gradient(#2563eb 1px, transparent 1px), linear-gradient(90deg, #2563eb 1px, transparent 1px); background-size: 60px 60px;"></div>
+  <div class="absolute inset-0 bg-gradient-to-b from-[#2563eb]/5 via-transparent to-transparent"></div>
+
+  <div class="relative z-10 max-w-5xl mx-auto px-4 text-center pt-20">
+    <div class="inline-block mb-6 px-4 py-1.5 bg-[#2563eb]/10 border border-[#2563eb]/20 rounded-sm">
+      <span class="text-[#2563eb] text-sm font-semibold tracking-wider uppercase">AI-Powered Business Solutions</span>
+    </div>
+    <h1 class="text-5xl sm:text-6xl lg:text-7xl font-black leading-tight tracking-tight mb-6">
+      Stop Wasting Time.<br>
+      <span class="text-[#2563eb]">Start Automating.</span>
+    </h1>
+    <p class="text-lg sm:text-xl text-gray-400 max-w-2xl mx-auto mb-10 leading-relaxed">
+      aiWrench builds AI-powered websites, automation workflows, and intelligent tools that help small businesses move faster and work smarter.
+    </p>
+    <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+      <a href="#contact" class="w-full sm:w-auto px-8 py-4 bg-[#2563eb] text-white font-bold text-lg rounded hover:bg-[#1d4ed8] transition shadow-lg shadow-[#2563eb]/25 hover:shadow-[#2563eb]/40">
+        Get Your Free Consultation
+      </a>
+      <a href="#services" class="w-full sm:w-auto px-8 py-4 border border-gray-700 text-gray-300 font-semibold text-lg rounded hover:border-gray-500 hover:text-white transition">
+        View Services
+      </a>
+    </div>
+  </div>
+
+  <!-- Scroll indicator -->
+  <div class="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
+    <svg class="w-6 h-6 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"/>
+    </svg>
+  </div>
+</section>
+
+<!-- Services Section -->
+<section id="services" class="py-24 relative">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-16">
+      <span class="text-[#2563eb] text-sm font-semibold tracking-wider uppercase">What We Offer</span>
+      <h2 class="mt-3 text-4xl sm:text-5xl font-extrabold tracking-tight">Our Services</h2>
+      <p class="mt-4 text-gray-400 max-w-xl mx-auto">Three tiers designed to match where you are and where you're headed.</p>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-8">
+      <!-- Ignite -->
+      <div class="group relative bg-[#111118] border border-gray-800/50 rounded p-8 hover:border-[#2563eb]/50 transition-all duration-300 hover:shadow-lg hover:shadow-[#2563eb]/5">
+        <div class="absolute inset-0 bg-gradient-to-b from-[#2563eb]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity rounded"></div>
+        <div class="relative">
+          <div class="w-12 h-12 bg-[#2563eb]/10 flex items-center justify-center rounded mb-6">
+            <svg class="w-6 h-6 text-[#2563eb]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+            </svg>
+          </div>
+          <span class="inline-block mb-2 px-2 py-0.5 bg-[#eab308]/10 text-[#eab308] text-xs font-bold tracking-wider uppercase rounded-sm">One-Time</span>
+          <h3 class="text-2xl font-bold mb-2">Ignite</h3>
+          <p class="text-3xl font-extrabold text-[#2563eb] mb-4">$2,500</p>
+          <p class="text-gray-400 mb-6">A fully built, AI-enhanced website delivered in under 2 weeks. Perfect for launching or leveling up your online presence.</p>
+          <ul class="space-y-3 text-gray-300 text-sm">
+            <li class="flex items-start gap-2"><span class="text-[#2563eb] mt-0.5">✓</span> Custom-designed responsive site</li>
+            <li class="flex items-start gap-2"><span class="text-[#2563eb] mt-0.5">✓</span> AI-powered chatbot integration</li>
+            <li class="flex items-start gap-2"><span class="text-[#2563eb] mt-0.5">✓</span> SEO optimization & analytics</li>
+            <li class="flex items-start gap-2"><span class="text-[#2563eb] mt-0.5">✓</span> Lead capture forms</li>
+            <li class="flex items-start gap-2"><span class="text-[#2563eb] mt-0.5">✓</span> 30 days of support</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Wrench -->
+      <div class="group relative bg-[#111118] border border-[#2563eb]/30 rounded p-8 hover:border-[#2563eb]/60 transition-all duration-300 shadow-lg shadow-[#2563eb]/5 hover:shadow-[#2563eb]/10 scale-[1.02]">
+        <div class="absolute -top-3 left-1/2 -translate-x-1/2">
+          <span class="px-3 py-1 bg-[#eab308] text-black text-xs font-bold tracking-wider uppercase rounded-sm">Most Popular</span>
+        </div>
+        <div class="absolute inset-0 bg-gradient-to-b from-[#2563eb]/5 to-transparent opacity-50 rounded"></div>
+        <div class="relative">
+          <div class="w-12 h-12 bg-[#2563eb]/10 flex items-center justify-center rounded mb-6">
+            <span class="text-2xl">🔩</span>
+          </div>
+          <span class="inline-block mb-2 px-2 py-0.5 bg-[#2563eb]/10 text-[#2563eb] text-xs font-bold tracking-wider uppercase rounded-sm">Monthly</span>
+          <h3 class="text-2xl font-bold mb-2">Wrench</h3>
+          <p class="text-3xl font-extrabold text-[#2563eb] mb-4">$1,200<span class="text-base font-normal text-gray-400">/mo</span></p>
+          <p class="text-gray-400 mb-6">Ongoing AI automation and support. We embed into your operations and continuously optimize your workflows.</p>
+          <ul class="space-y-3 text-gray-300 text-sm">
+            <li class="flex items-start gap-2"><span class="text-[#2563eb] mt-0.5">✓</span> Everything in Ignite</li>
+            <li class="flex items-start gap-2"><span class="text-[#2563eb] mt-0.5">✓</span> Custom AI workflow automations</li>
+            <li class="flex items-start gap-2"><span class="text-[#2563eb] mt-0.5">✓</span> CRM & email integrations</li>
+            <li class="flex items-start gap-2"><span class="text-[#2563eb] mt-0.5">✓</span> Monthly performance reports</li>
+            <li class="flex items-start gap-2"><span class="text-[#2563eb] mt-0.5">✓</span> Priority support & updates</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Blueprint -->
+      <div class="group relative bg-[#111118] border border-gray-800/50 rounded p-8 hover:border-[#2563eb]/50 transition-all duration-300 hover:shadow-lg hover:shadow-[#2563eb]/5">
+        <div class="absolute inset-0 bg-gradient-to-b from-[#2563eb]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity rounded"></div>
+        <div class="relative">
+          <div class="w-12 h-12 bg-[#2563eb]/10 flex items-center justify-center rounded mb-6">
+            <svg class="w-6 h-6 text-[#2563eb]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/>
+            </svg>
+          </div>
+          <span class="inline-block mb-2 px-2 py-0.5 bg-[#eab308]/10 text-[#eab308] text-xs font-bold tracking-wider uppercase rounded-sm">Enterprise</span>
+          <h3 class="text-2xl font-bold mb-2">Blueprint</h3>
+          <p class="text-3xl font-extrabold text-[#2563eb] mb-4">Custom</p>
+          <p class="text-gray-400 mb-6">Full-scale AI transformation. Custom-built systems, integrations, and strategy tailored to your enterprise needs.</p>
+          <ul class="space-y-3 text-gray-300 text-sm">
+            <li class="flex items-start gap-2"><span class="text-[#2563eb] mt-0.5">✓</span> Everything in Wrench</li>
+            <li class="flex items-start gap-2"><span class="text-[#2563eb] mt-0.5">✓</span> Custom AI model training</li>
+            <li class="flex items-start gap-2"><span class="text-[#2563eb] mt-0.5">✓</span> Enterprise integrations</li>
+            <li class="flex items-start gap-2"><span class="text-[#2563eb] mt-0.5">✓</span> Dedicated account manager</li>
+            <li class="flex items-start gap-2"><span class="text-[#2563eb] mt-0.5">✓</span> SLA & white-glove onboarding</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- How It Works -->
+<section id="how-it-works" class="py-24 relative">
+  <div class="absolute inset-0 bg-gradient-to-b from-transparent via-[#2563eb]/[0.02] to-transparent"></div>
+  <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-16">
+      <span class="text-[#2563eb] text-sm font-semibold tracking-wider uppercase">The Process</span>
+      <h2 class="mt-3 text-4xl sm:text-5xl font-extrabold tracking-tight">How It Works</h2>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-12">
+      <div class="text-center">
+        <div class="w-16 h-16 bg-[#2563eb]/10 border border-[#2563eb]/20 flex items-center justify-center rounded mx-auto mb-6">
+          <span class="text-2xl font-black text-[#2563eb]">01</span>
+        </div>
+        <h3 class="text-xl font-bold mb-3">Discovery Call</h3>
+        <p class="text-gray-400">We learn about your business, pain points, and goals. No fluff — just a focused 30-minute conversation.</p>
+      </div>
+      <div class="text-center">
+        <div class="w-16 h-16 bg-[#2563eb]/10 border border-[#2563eb]/20 flex items-center justify-center rounded mx-auto mb-6">
+          <span class="text-2xl font-black text-[#2563eb]">02</span>
+        </div>
+        <h3 class="text-xl font-bold mb-3">Build & Integrate</h3>
+        <p class="text-gray-400">We design and build your AI-powered solution, integrating it seamlessly into your existing workflow.</p>
+      </div>
+      <div class="text-center">
+        <div class="w-16 h-16 bg-[#2563eb]/10 border border-[#2563eb]/20 flex items-center justify-center rounded mx-auto mb-6">
+          <span class="text-2xl font-black text-[#2563eb]">03</span>
+        </div>
+        <h3 class="text-xl font-bold mb-3">Launch & Optimize</h3>
+        <p class="text-gray-400">Go live with full support. We monitor performance and continuously optimize for better results.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Contact / Lead Form Section -->
+<section id="contact" class="py-24 relative">
+  <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-12">
+      <span class="text-[#2563eb] text-sm font-semibold tracking-wider uppercase">Let's Talk</span>
+      <h2 class="mt-3 text-4xl sm:text-5xl font-extrabold tracking-tight">Get Started</h2>
+      <p class="mt-4 text-gray-400">Tell us about your project and we'll get back to you within 1 business day.</p>
+    </div>
+
+    <% if flash[:notice] %>
+      <div class="mb-8 p-4 bg-green-900/30 border border-green-500/30 rounded text-green-300 text-center font-semibold">
+        <%= flash[:notice] %>
+      </div>
+    <% end %>
+
+    <% if flash[:alert] %>
+      <div class="mb-8 p-4 bg-red-900/30 border border-red-500/30 rounded text-red-300 text-center font-semibold">
+        <%= flash[:alert] %>
+      </div>
+    <% end %>
+
+    <div class="bg-[#111118] border border-gray-800/50 rounded p-8 sm:p-10">
+      <%= form_with model: @lead, url: leads_path, class: "space-y-6" do |f| %>
+        <!-- Honeypot -->
+        <div class="absolute" style="left: -9999px; top: -9999px;">
+          <label for="website">Website</label>
+          <input type="text" name="website" id="website" tabindex="-1" autocomplete="off">
+        </div>
+
+        <div class="grid sm:grid-cols-2 gap-6">
+          <div>
+            <label for="lead_name" class="block text-sm font-semibold text-gray-300 mb-2">Name *</label>
+            <%= f.text_field :name, class: "w-full px-4 py-3 bg-[#0a0a0f] border border-gray-700 rounded text-white placeholder-gray-500 focus:outline-none focus:border-[#2563eb] focus:ring-1 focus:ring-[#2563eb] transition", placeholder: "John Smith", required: true %>
+          </div>
+          <div>
+            <label for="lead_company" class="block text-sm font-semibold text-gray-300 mb-2">Company</label>
+            <%= f.text_field :company, class: "w-full px-4 py-3 bg-[#0a0a0f] border border-gray-700 rounded text-white placeholder-gray-500 focus:outline-none focus:border-[#2563eb] focus:ring-1 focus:ring-[#2563eb] transition", placeholder: "Acme Inc." %>
+          </div>
+        </div>
+
+        <div class="grid sm:grid-cols-2 gap-6">
+          <div>
+            <label for="lead_email" class="block text-sm font-semibold text-gray-300 mb-2">Email *</label>
+            <%= f.email_field :email, class: "w-full px-4 py-3 bg-[#0a0a0f] border border-gray-700 rounded text-white placeholder-gray-500 focus:outline-none focus:border-[#2563eb] focus:ring-1 focus:ring-[#2563eb] transition", placeholder: "john@acme.com", required: true %>
+          </div>
+          <div>
+            <label for="lead_phone" class="block text-sm font-semibold text-gray-300 mb-2">Phone</label>
+            <%= f.telephone_field :phone, class: "w-full px-4 py-3 bg-[#0a0a0f] border border-gray-700 rounded text-white placeholder-gray-500 focus:outline-none focus:border-[#2563eb] focus:ring-1 focus:ring-[#2563eb] transition", placeholder: "(555) 123-4567" %>
+          </div>
+        </div>
+
+        <div class="grid sm:grid-cols-2 gap-6">
+          <div>
+            <label for="lead_industry" class="block text-sm font-semibold text-gray-300 mb-2">Industry</label>
+            <%= f.select :industry, Lead::INDUSTRIES, { include_blank: "Select your industry" }, class: "w-full px-4 py-3 bg-[#0a0a0f] border border-gray-700 rounded text-white focus:outline-none focus:border-[#2563eb] focus:ring-1 focus:ring-[#2563eb] transition" %>
+          </div>
+          <div>
+            <label for="lead_service_interest" class="block text-sm font-semibold text-gray-300 mb-2">Service Interested In</label>
+            <%= f.select :service_interest, Lead::SERVICES, { include_blank: "Select a service" }, class: "w-full px-4 py-3 bg-[#0a0a0f] border border-gray-700 rounded text-white focus:outline-none focus:border-[#2563eb] focus:ring-1 focus:ring-[#2563eb] transition" %>
+          </div>
+        </div>
+
+        <div>
+          <label for="lead_message" class="block text-sm font-semibold text-gray-300 mb-2">Message</label>
+          <%= f.text_area :message, rows: 5, class: "w-full px-4 py-3 bg-[#0a0a0f] border border-gray-700 rounded text-white placeholder-gray-500 focus:outline-none focus:border-[#2563eb] focus:ring-1 focus:ring-[#2563eb] transition resize-none", placeholder: "Tell us about your project..." %>
+        </div>
+
+        <% if ENV["HCAPTCHA_SITE_KEY"].present? %>
+          <div class="flex justify-center">
+            <div class="h-captcha" data-sitekey="<%= ENV['HCAPTCHA_SITE_KEY'] %>" data-theme="dark"></div>
+            <script src="https://js.hcaptcha.com/1/api.js" async defer></script>
+          </div>
+        <% end %>
+
+        <div>
+          <%= f.submit "Send Message", class: "w-full px-8 py-4 bg-[#2563eb] text-white font-bold text-lg rounded hover:bg-[#1d4ed8] transition cursor-pointer shadow-lg shadow-[#2563eb]/25 hover:shadow-[#2563eb]/40" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="py-12 border-t border-gray-800/50">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex flex-col md:flex-row items-center justify-between gap-4">
+      <div class="flex items-center gap-2">
+        <span class="text-xl">🔩</span>
+        <span class="text-lg font-extrabold tracking-tight">
+          ai<span class="text-[#2563eb]">Wrench</span>
+        </span>
+      </div>
+      <p class="text-gray-500 text-sm">&copy; <%= Date.current.year %> aiWrench. All rights reserved.</p>
+    </div>
+  </div>
+</footer>

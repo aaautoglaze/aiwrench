@@ -1,7 +1,6 @@
 @import "tailwindcss";
 
 @layer base {
-  /* Custom scrollbar for dark theme */
   ::-webkit-scrollbar {
     width: 8px;
   }
@@ -16,9 +15,67 @@
     background: #2563eb;
   }
 
-  /* Style select dropdowns for dark theme */
   select option {
     background: #111118;
     color: #f3f4f6;
   }
+}
+
+/* Wrench orbiting an invisible nut */
+@keyframes orbit-wrench {
+  0% {
+    transform: rotate(0deg) translateX(60px) rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg) translateX(60px) rotate(-360deg);
+  }
+}
+
+@keyframes orbit-wrench-sm {
+  0% {
+    transform: rotate(0deg) translateX(40px) rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg) translateX(40px) rotate(-360deg);
+  }
+}
+
+/* Pulsing glow on the invisible nut center */
+@keyframes nut-pulse {
+  0%, 100% {
+    box-shadow: 0 0 20px 4px rgba(37, 99, 235, 0.15), 0 0 60px 10px rgba(37, 99, 235, 0.05);
+  }
+  50% {
+    box-shadow: 0 0 30px 8px rgba(37, 99, 235, 0.25), 0 0 80px 16px rgba(37, 99, 235, 0.1);
+  }
+}
+
+/* Orbit ring */
+@keyframes ring-pulse {
+  0%, 100% {
+    opacity: 0.1;
+  }
+  50% {
+    opacity: 0.2;
+  }
+}
+
+.wrench-orbit {
+  animation: orbit-wrench 8s linear infinite;
+}
+
+.wrench-orbit-reverse {
+  animation: orbit-wrench 12s linear infinite reverse;
+}
+
+.wrench-orbit-sm {
+  animation: orbit-wrench-sm 8s linear infinite;
+}
+
+.nut-center {
+  animation: nut-pulse 3s ease-in-out infinite;
+}
+
+.orbit-ring {
+  animation: ring-pulse 3s ease-in-out infinite;
 }
